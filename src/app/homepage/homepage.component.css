@@ -1,0 +1,29 @@
+span{
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+}
+
+#wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+mat-card{
+    float: left;
+    padding: 0px;
+    margin: 5px 5px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+mat-card>mat-icon{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 5px;
+}
+mat-card-content{
+    font-size:12px;
+}

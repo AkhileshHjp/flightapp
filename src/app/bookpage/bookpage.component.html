@@ -1,0 +1,83 @@
+<mat-toolbar>
+    <button mat-raised-button>
+        One Way
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-raised-button>
+        Round Trip
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-raised-button>
+        Multi-city
+    </button>
+
+</mat-toolbar>
+<br>
+
+  <form class="example-form">
+    <button mat-icon-button ><mat-icon style="color: rgb(194, 160, 225);"> location_on</mat-icon></button>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Form</mat-label>
+      <input type="text"
+             placeholder="Enter City Name"
+             aria-label="Text"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+<button mat-icon-button ><mat-icon style="color: rgb(194, 160, 225);margin-top: 50px;"> location_on</mat-icon></button>
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>To</mat-label>
+      <input type="text"
+             placeholder="Enter City Name"
+             aria-label="Text"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Departure Date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-icon-button ><mat-icon style="color: rgb(194, 160, 225); position: relative; top: 185px;"> pregnant_woman</mat-icon></button> 
+<mat-form-field appearance="fill">
+    <mat-label>Travellers</mat-label>
+    <mat-select>
+      <mat-option value="1 Adult" >1 Adult</mat-option>
+      <mat-option value="2 Adult" >2 Adult</mat-option>
+      <mat-option  value="3 Adult">3 Adult</mat-option>
+      <mat-option  value="4 Adult">4 Adult</mat-option>
+      <mat-option value="5 Adult">5 Adult</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <section class="example-section">
+    <mat-checkbox class="example-margin">Non-Stop Flight</mat-checkbox><br><br>
+    <mat-checkbox class="example-margin" >Flexible dates +- 3 Day </mat-checkbox>
+  </section>
+<br>
+  <br>
+<div id="footer">   <button  color="primary" mat-raised-button (click)="onBook()">Find Flights</button>
+  </div>
+
+
